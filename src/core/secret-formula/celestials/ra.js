@@ -17,7 +17,7 @@ export const ra = {
       chunkGain: "Relic Shards gained",
       memoryGain: "best Glyph level",
       requiredUnlock: () => Ra.unlocks.effarigUnlock,
-      rawMemoryChunksPerSecond: () => 4 * Math.pow(Effarig.shardsGained, 0.175),
+      rawMemoryChunksPerSecond: () => 4 * Decimal.pow(Effarig.shardsGained, 0.175).toNumber(),
       memoryProductionMultiplier: () => Ra.unlocks.effarigXP.effectOrDefault(1)
     },
     enslaved: {
@@ -141,7 +141,7 @@ export const ra = {
     relicShardGlyphLevelBoost: {
       id: 12,
       reward: "Glyph level is increased based on Relic Shards gained",
-      effect: () => 100 * Math.pow(Math.log10(Math.max(Effarig.shardsGained, 1)), 2),
+      effect: () => 100 * Math.pow(Decimal.log10(Decimal.max(Effarig.shardsGained, 1)), 2),
       pet: "effarig",
       level: 15,
       displayIcon: `<span class="fas fa-fire"></span>`
