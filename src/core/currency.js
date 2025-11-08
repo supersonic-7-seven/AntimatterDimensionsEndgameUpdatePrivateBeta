@@ -440,9 +440,12 @@ Currency.perkPoints = new class extends NumberCurrency {
   set value(value) { player.reality.perkPoints = value; }
 }();
 
-Currency.relicShards = new class extends NumberCurrency {
+Currency.relicShards = new class extends DecimalCurrency {
   get value() { return player.celestials.effarig.relicShards; }
-  set value(value) { player.celestials.effarig.relicShards = value; }
+  set value(value) {
+    const newValue = new Decimal(value);
+    player.celestials.effarig.relicShards = newValue;
+  }
 }();
 
 Currency.imaginaryMachines = new class extends NumberCurrency {
