@@ -448,7 +448,7 @@ Currency.relicShards = new class extends DecimalCurrency {
   }
 }();
 
-Currency.imaginaryMachines = new class extends NumberCurrency {
+Currency.imaginaryMachines = new class extends DecimalCurrency {
   get value() { return player.reality.imaginaryMachines; }
   set value(value) {
     player.reality.imaginaryMachines = Math.clampMax(value, MachineHandler.currentIMCap);
