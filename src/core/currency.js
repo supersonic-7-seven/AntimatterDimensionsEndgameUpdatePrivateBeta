@@ -478,7 +478,7 @@ Currency.darkEnergy = new class extends NumberCurrency {
   }
 }();
 
-Currency.singularities = new class extends DecCurrency {
+Currency.singularities = new class extends DecimalCurrency {
   get value() { return player.celestials.laitela.singularities; }
   set value(value) { player.celestials.laitela.singularities = value; }
 }();
