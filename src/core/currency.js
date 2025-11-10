@@ -451,7 +451,7 @@ Currency.relicShards = new class extends DecimalCurrency {
 Currency.imaginaryMachines = new class extends DecimalCurrency {
   get value() { return player.reality.imaginaryMachines; }
   set value(value) {
-    player.reality.imaginaryMachines = Math.clampMax(value, MachineHandler.currentIMCap);
+    player.reality.imaginaryMachines = Decimal.clampMax(value, MachineHandler.currentIMCap);
   }
 }();
 
@@ -478,7 +478,7 @@ Currency.darkEnergy = new class extends NumberCurrency {
   }
 }();
 
-Currency.singularities = new class extends NumberCurrency {
+Currency.singularities = new class extends DecCurrency {
   get value() { return player.celestials.laitela.singularities; }
   set value(value) { player.celestials.laitela.singularities = value; }
 }();
