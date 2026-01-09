@@ -162,7 +162,7 @@ export default {
     },
     formatLevel(x) {
       return x > 1000
-        ? formatInt(Math.floor(x))
+        ? formatHybridLarge(Math.floor(x), 3)
         : format(x, 2, 4);
     },
     makeRowStyle(r) {
